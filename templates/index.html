@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset = "UTF-8">
+  <title>Personality App</title>
+
+  <style>
+
+    h1   {color: black;
+      text-align: center;}
+
+  </style>
+
+</head>
+
+<body style = "background-color:powderblue; z-index: -1;">
+
+  <h1> Welcome to the Personality Checker App</h1>
+
+  <div>
+    <img src = "static/images/p.png" class = "w3-border w3-padding" alt = "Personality Image" width = "1500" height = "300">
+  </div>
+  
+
+ 
+ 
+ <div class = "login">
+
+    <center>
+    <form action="{{ url_for('predict')}}" method="post">
+
+      <label>Select your Gender</label>  
+      <br>
+    	<select name = 'gender' required>
+        <option value = 'Male' >Male</option>
+        <option value = 'Female'>Female</option>
+      </select>
+    	<br>
+      <br>
+      
+      <label>Enter your age</label>
+      <br>
+      <input type = "numeric" name = 'age' placeholder = "Enter age here" required/>
+      <br>
+      <br>
+
+      <label>How open are you ?</label>
+      <br>
+      <input type = "numeric" name = 'open' placeholder = "Enter in Range 1 - 10" required/>
+      <br>
+      <br>
+
+      <label>How often are you agitated ?</label>
+      <br>
+      <input type = "numeric" name = 'agitate' placeholder = "Enter in Range 1 - 10" required/>
+      <br>
+      <br>
+
+      <label>Degree of self discipline ?</label>
+      <br>
+      <input type = "numeric" name = 'discipline' placeholder = "Enter in Range 1 - 10" required/>
+      <br>
+      <br>
+
+      <label>How often do you agree with people ?</label>
+      <br>
+      <input type = "numeric" name = 'agree' placeholder = "Enter in Range 1 - 10" required/>
+      <br>
+      <br>
+
+      <label>How social are you ?</label>
+      <br>
+      <input type = "numeric" name = 'social' placeholder = "Enter in Range 1 - 10" required/>
+      <br>
+      <br>
+        
+      <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Predict</strong></button></a>
+        
+    </form>
+    </center>
+  
+   <div>
+       <center>
+   <h2>{{ prediction_text }}</h2>
+       </center>
+   </div>
+
+ </div>
+
+</body>
+</html>
